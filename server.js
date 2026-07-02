@@ -283,16 +283,10 @@ app.post("/api/chat", async (req, res) => {
 
 });
 
-if (process.env.NODE_ENV !== "production") {
+const PORT = process.env.PORT || 3000;
 
-    const PORT = process.env.PORT || 3000;
-
-    app.listen(PORT, () => {
-
-        console.log(`Servidor iniciado em http://localhost:${PORT}`);
-
-    });
-
-}
+app.listen(PORT, () => {
+    console.log(`Servidor iniciado na porta ${PORT}`);
+});
 
 export default app;
