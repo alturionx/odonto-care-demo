@@ -10,143 +10,145 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <style>
-
-        body{
-            font-family:Inter,sans-serif;
+        body {
+            font-family: Inter, sans-serif;
         }
 
-        html{
-            scroll-behavior:smooth;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .glass{
-            backdrop-filter:blur(18px);
-            background:rgba(255,255,255,.85);
+        .glass {
+            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, .85);
         }
-
     </style>
 
 </head>
 
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-800 overflow-x-hidden">
 
-<nav class="fixed top-0 left-0 right-0 glass border-b border-slate-200 z-50">
 
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- HEADER -->
+    <nav class="fixed top-0 left-0 right-0 glass border-b border-slate-200 z-50">
 
-        <div class="flex items-center gap-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+
+            <!-- Logo -->
+
+            <div class="flex items-center gap-3">
+
+                <div
+                    class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl sm:text-2xl shadow-lg">
+
+                    <i class="bi bi-heart-pulse-fill"></i>
+
+                </div>
+
+                <div>
+
+                    <h1 class="font-bold text-lg sm:text-xl">
+
+                        OdontoCare
+
+                    </h1>
+
+                    <p class="text-[11px] sm:text-xs text-slate-500">
+
+                        Clínica Odontológica
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Menu Desktop -->
+
+            <div class="hidden lg:flex gap-10 font-medium">
+
+                <a href="#inicio" class="hover:text-blue-600 transition">
+                    Início
+                </a>
+
+                <a href="#tratamentos" class="hover:text-blue-600 transition">
+                    Tratamentos
+                </a>
+
+                <a href="#sobre" class="hover:text-blue-600 transition">
+                    Sobre
+                </a>
+
+                <a href="#contato" class="hover:text-blue-600 transition">
+                    Contato
+                </a>
+
+            </div>
+
+            <!-- Botão IA -->
+
+            <button onclick="toggleChat()"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl flex items-center gap-2 sm:gap-3 shadow-lg transition text-sm sm:text-base">
+
+                <i class="bi bi-robot"></i>
+
+                <span class="hidden sm:inline">
+
+                    Assistente IA
+
+                </span>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- AVISO -->
+    <div class="pt-20 sm:pt-24">
+
+        <div class="bg-amber-50 border-y border-amber-200">
 
             <div
-                class="w-12 h-12 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg">
+                class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 text-center text-xs sm:text-sm text-amber-800">
 
-                <i class="bi bi-heart-pulse-fill"></i>
+                <i class="bi bi-info-circle-fill text-lg shrink-0"></i>
 
-            </div>
+                <span>
 
-            <div>
+                    <strong>Demonstração:</strong>
+                    Este site foi desenvolvido pela <strong>AlturionX</strong> para apresentar uma solução de site
+                    institucional com Assistente de IA para clínicas odontológicas. A empresa e as informações exibidas
+                    são fictícias.
 
-                <h1 class="font-bold text-xl">
-
-                    OdontoCare
-
-                </h1>
-
-                <p class="text-xs text-slate-500">
-
-                    Clínica Odontológica
-
-                </p>
+                </span>
 
             </div>
 
         </div>
 
-        <div class="hidden lg:flex gap-10 font-medium">
-
-            <a href="#inicio" class="hover:text-blue-600 transition">
-
-                Início
-
-            </a>
-
-            <a href="#tratamentos" class="hover:text-blue-600 transition">
-
-                Tratamentos
-
-            </a>
-
-            <a href="#sobre" class="hover:text-blue-600 transition">
-
-                Sobre
-
-            </a>
-
-            <a href="#contato" class="hover:text-blue-600 transition">
-
-                Contato
-
-            </a>
-
-        </div>
-
-        <button
-            onclick="toggleChat()"
-            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl flex items-center gap-3 shadow-lg transition">
-
-            <i class="bi bi-robot"></i>
-
-            Assistente IA
-
-        </button>
-
     </div>
 
-</nav>
-
-<!-- AVISO -->
-
-<div class="pt-24">
-
-    <div class="bg-amber-50 border-y border-amber-200">
-
-        <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-center gap-3 text-center text-sm text-amber-800">
-
-            <i class="bi bi-info-circle-fill text-lg"></i>
-
-            <span>
-                <strong>Demonstração:</strong>
-                Este site foi desenvolvido pela <strong>AlturionX</strong> para apresentar uma solução de site institucional com Assistente de IA para clínicas odontológicas. A empresa e as informações exibidas são fictícias.
-            </span>
-
-        </div>
-
-    </div>
-
-</div>
 <!-- HERO -->
+<section id="inicio" class="pt-[20px] sm:pt-32 lg:pt-36 pb-16 sm:pb-20 lg:pb-24 overflow-hidden">
 
-<section id="inicio" class="pt-36 pb-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             <!-- Texto -->
-
-            <div>
+            <div class="text-center lg:text-left flex flex-col items-center lg:items-start">
 
                 <span
-                    class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-medium">
+                    class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 sm:px-5 py-2 rounded-full font-medium text-sm sm:text-base">
 
                     <i class="bi bi-patch-check-fill"></i>
 
@@ -154,8 +156,7 @@
 
                 </span>
 
-                <h1
-                    class="text-5xl lg:text-7xl font-extrabold leading-tight mt-8">
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight mt-6 sm:mt-8">
 
                     Seu sorriso merece
 
@@ -167,8 +168,7 @@
 
                 </h1>
 
-                <p
-                    class="text-slate-600 text-lg mt-8 leading-8 max-w-xl">
+                <p class="text-slate-600 text-base sm:text-lg leading-7 sm:leading-8 mt-6 sm:mt-8 max-w-xl">
 
                     Somos especialistas em odontologia moderna,
                     oferecendo tratamentos personalizados com
@@ -177,11 +177,11 @@
 
                 </p>
 
-                <div
-                    class="flex flex-wrap gap-5 mt-10">
+                <!-- Botões -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-8 sm:mt-10 w-full sm:w-auto">
 
                     <button
-                        class="bg-blue-600 hover:bg-blue-700 transition text-white px-8 py-4 rounded-2xl shadow-lg flex items-center gap-3">
+                        class="bg-blue-600 hover:bg-blue-700 transition text-white px-8 py-4 rounded-2xl shadow-lg flex items-center justify-center gap-3 w-full sm:w-auto">
 
                         <i class="bi bi-calendar-check"></i>
 
@@ -189,9 +189,8 @@
 
                     </button>
 
-                    <button
-                        onclick="toggleChat()"
-                        class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition px-8 py-4 rounded-2xl flex items-center gap-3">
+                    <button onclick="toggleChat()"
+                        class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 transition px-8 py-4 rounded-2xl flex items-center justify-center gap-3 w-full sm:w-auto">
 
                         <i class="bi bi-robot"></i>
 
@@ -201,57 +200,22 @@
 
                 </div>
 
-                <!-- Estatísticas -->
+                <!-- Estatísticas (LADO A LADO SEMPRE) -->
+                <div class="flex justify-center lg:justify-start gap-8 sm:gap-12 mt-12 sm:mt-14">
 
-                <div
-                    class="grid grid-cols-3 gap-6 mt-14">
-
-                    <div>
-
-                        <h2 class="text-4xl font-extrabold text-blue-600">
-
-                            10+
-
-                        </h2>
-
-                        <p class="text-slate-500">
-
-                            Anos de experiência
-
-                        </p>
-
+                    <div class="text-center">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-600">10+</h2>
+                        <p class="text-slate-500 text-sm sm:text-base">Anos de experiência</p>
                     </div>
 
-                    <div>
-
-                        <h2 class="text-4xl font-extrabold text-blue-600">
-
-                            5.000+
-
-                        </h2>
-
-                        <p class="text-slate-500">
-
-                            Pacientes
-
-                        </p>
-
+                    <div class="text-center">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-600">5.000+</h2>
+                        <p class="text-slate-500 text-sm sm:text-base">Pacientes</p>
                     </div>
 
-                    <div>
-
-                        <h2 class="text-4xl font-extrabold text-blue-600">
-
-                            ★ 4.9
-
-                        </h2>
-
-                        <p class="text-slate-500">
-
-                            Avaliação média
-
-                        </p>
-
+                    <div class="text-center">
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-blue-600">★ 4.9</h2>
+                        <p class="text-slate-500 text-sm sm:text-base">Avaliação média</p>
                     </div>
 
                 </div>
@@ -259,34 +223,27 @@
             </div>
 
             <!-- Imagem -->
-
-            <div class="relative">
+            <div class="relative mt-10 lg:mt-0">
 
                 <div
-                    class="absolute -top-8 -left-8 w-40 h-40 bg-blue-200 rounded-full blur-3xl opacity-50">
+                    class="absolute -top-6 -left-6 sm:-top-8 sm:-left-8 w-24 h-24 sm:w-40 sm:h-40 bg-blue-200 rounded-full blur-3xl opacity-50">
 
                 </div>
 
                 <div
-                    class="absolute -bottom-10 -right-10 w-56 h-56 bg-cyan-200 rounded-full blur-3xl opacity-50">
+                    class="absolute -bottom-6 -right-6 sm:-bottom-10 sm:-right-10 w-36 h-36 sm:w-56 sm:h-56 bg-cyan-200 rounded-full blur-3xl opacity-50">
 
                 </div>
 
-                <img
-
-                    src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
-
-                    class="relative rounded-[40px] shadow-2xl w-full object-cover">
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80"
+                    class="relative rounded-3xl lg:rounded-[40px] shadow-2xl w-full object-cover">
 
                 <!-- Card flutuante -->
-
-                <div
-                    class="absolute bottom-8 -left-8 bg-white rounded-3xl shadow-xl p-6 hidden lg:block">
+                <div class="absolute bottom-8 -left-8 bg-white rounded-3xl shadow-xl p-6 hidden lg:block">
 
                     <div class="flex items-center gap-4">
 
-                        <div
-                            class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl">
 
                             <i class="bi bi-award-fill"></i>
 
@@ -319,901 +276,192 @@
     </div>
 
 </section>
-<!-- ESPECIALIDADES -->
 
-<section id="tratamentos" class="py-24 bg-white">
+    <!-- ESPECIALIDADES -->
+    <section id="tratamentos" class="py-16 sm:py-20 lg:py-24 bg-white">
 
-    <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="text-center">
+            <div class="text-center">
 
-            <span class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
-
-                <i class="bi bi-stars"></i>
-
-                Nossos Tratamentos
-
-            </span>
-
-            <h2 class="text-5xl font-bold mt-6">
-
-                Especialidades da Clínica
-
-            </h2>
-
-            <p class="text-slate-500 max-w-2xl mx-auto mt-5 text-lg">
-
-                Trabalhamos com odontologia moderna, tecnologia de ponta
-                e atendimento personalizado para todas as idades.
-
-            </p>
-
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-
-            <div class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-8 transition duration-300 shadow hover:shadow-xl">
-
-                <div class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-3xl group-hover:bg-white">
-
-                    <i class="bi bi-shield-check"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-bold mt-6 group-hover:text-white">
-
-                    Implantes
-
-                </h3>
-
-                <p class="mt-4 text-slate-500 group-hover:text-blue-100 leading-7">
-
-                    Reabilitação oral completa com implantes de alta qualidade para devolver conforto e segurança ao sorrir.
-
-                </p>
-
-            </div>
-
-            <div class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-8 transition duration-300 shadow hover:shadow-xl">
-
-                <div class="w-16 h-16 rounded-2xl bg-yellow-100 text-yellow-500 flex items-center justify-center text-3xl group-hover:bg-white">
+                <span
+                    class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm sm:text-base">
 
                     <i class="bi bi-stars"></i>
 
-                </div>
-
-                <h3 class="text-2xl font-bold mt-6 group-hover:text-white">
-
-                    Clareamento
-
-                </h3>
-
-                <p class="mt-4 text-slate-500 group-hover:text-blue-100 leading-7">
-
-                    Técnicas modernas para conquistar um sorriso mais branco com segurança.
-
-                </p>
-
-            </div>
-
-            <div class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-8 transition duration-300 shadow hover:shadow-xl">
-
-                <div class="w-16 h-16 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-3xl group-hover:bg-white">
-
-                    <i class="bi bi-grid-3x3-gap-fill"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-bold mt-6 group-hover:text-white">
-
-                    Ortodontia
-
-                </h3>
-
-                <p class="mt-4 text-slate-500 group-hover:text-blue-100 leading-7">
-
-                    Correção do alinhamento dos dentes com aparelhos tradicionais e alinhadores invisíveis.
-
-                </p>
-
-            </div>
-
-            <div class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-8 transition duration-300 shadow hover:shadow-xl">
-
-                <div class="w-16 h-16 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-3xl group-hover:bg-white">
-
-                    <i class="bi bi-gem"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-bold mt-6 group-hover:text-white">
-
-                    Lentes Dentais
-
-                </h3>
-
-                <p class="mt-4 text-slate-500 group-hover:text-blue-100 leading-7">
-
-                    Transforme seu sorriso com laminados cerâmicos de alta estética.
-
-                </p>
-
-            </div>
-
-            <div class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-8 transition duration-300 shadow hover:shadow-xl">
-
-                <div class="w-16 h-16 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center text-3xl group-hover:bg-white">
-
-                    <i class="bi bi-heart-pulse"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-bold mt-6 group-hover:text-white">
-
-                    Prevenção
-
-                </h3>
-
-                <p class="mt-4 text-slate-500 group-hover:text-blue-100 leading-7">
-
-                    Limpeza, profilaxia e acompanhamento periódico para manter sua saúde bucal.
-
-                </p>
-
-            </div>
-
-            <div class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-8 transition duration-300 shadow hover:shadow-xl">
-
-                <div class="w-16 h-16 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-3xl group-hover:bg-white">
-
-                    <i class="bi bi-emoji-smile"></i>
-
-                </div>
-
-                <h3 class="text-2xl font-bold mt-6 group-hover:text-white">
-
-                    Odontologia Estética
-
-                </h3>
-
-                <p class="mt-4 text-slate-500 group-hover:text-blue-100 leading-7">
-
-                    Procedimentos para deixar seu sorriso ainda mais bonito e harmonioso.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- SOBRE -->
-
-<section id="sobre" class="py-24 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 text-white">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-
-            <div>
-
-                <span class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full">
-
-                    <i class="bi bi-patch-check-fill"></i>
-
-                    Excelência em Odontologia
+                    Nossos Tratamentos
 
                 </span>
 
-                <h2 class="text-5xl font-bold mt-8 leading-tight">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-5 sm:mt-6">
 
-                    Cuidamos do seu sorriso
-                    com tecnologia,
-                    experiência e dedicação.
+                    Especialidades da Clínica
 
                 </h2>
 
-                <p class="mt-8 text-blue-100 text-lg leading-8">
+                <p class="text-slate-500 max-w-2xl mx-auto mt-4 sm:mt-5 text-base sm:text-lg leading-7">
 
-                    Nossa missão é proporcionar um atendimento acolhedor,
-                    utilizando equipamentos modernos e técnicas atualizadas
-                    para garantir conforto, segurança e excelentes resultados.
-
-                </p>
-
-                <div class="grid sm:grid-cols-2 gap-5 mt-12">
-
-                    <div class="flex gap-4">
-
-                        <div class="text-2xl">
-
-                            <i class="bi bi-check-circle-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h4 class="font-semibold">
-
-                                Atendimento Humanizado
-
-                            </h4>
-
-                            <p class="text-blue-100 text-sm">
-
-                                Respeito e atenção em cada consulta.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="flex gap-4">
-
-                        <div class="text-2xl">
-
-                            <i class="bi bi-cpu-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h4 class="font-semibold">
-
-                                Equipamentos Modernos
-
-                            </h4>
-
-                            <p class="text-blue-100 text-sm">
-
-                                Tecnologia para diagnósticos precisos.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="flex gap-4">
-
-                        <div class="text-2xl">
-
-                            <i class="bi bi-person-check-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h4 class="font-semibold">
-
-                                Especialistas
-
-                            </h4>
-
-                            <p class="text-blue-100 text-sm">
-
-                                Profissionais altamente capacitados.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="flex gap-4">
-
-                        <div class="text-2xl">
-
-                            <i class="bi bi-heart-fill"></i>
-
-                        </div>
-
-                        <div>
-
-                            <h4 class="font-semibold">
-
-                                Atendimento Personalizado
-
-                            </h4>
-
-                            <p class="text-blue-100 text-sm">
-
-                                Cada paciente é único.
-
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div>
-
-                <div class="grid grid-cols-2 gap-6">
-
-                    <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center">
-
-                        <i class="bi bi-people-fill text-5xl"></i>
-
-                        <h3 class="text-5xl font-bold mt-5">
-
-                            5.000+
-
-                        </h3>
-
-                        <p class="mt-2 text-blue-100">
-
-                            Pacientes Atendidos
-
-                        </p>
-
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center">
-
-                        <i class="bi bi-award-fill text-5xl"></i>
-
-                        <h3 class="text-5xl font-bold mt-5">
-
-                            10+
-
-                        </h3>
-
-                        <p class="mt-2 text-blue-100">
-
-                            Anos de Experiência
-
-                        </p>
-
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center">
-
-                        <i class="bi bi-star-fill text-5xl"></i>
-
-                        <h3 class="text-5xl font-bold mt-5">
-
-                            4.9
-
-                        </h3>
-
-                        <p class="mt-2 text-blue-100">
-
-                            Avaliação Média
-
-                        </p>
-
-                    </div>
-
-                    <div class="bg-white/10 backdrop-blur rounded-3xl p-8 text-center">
-
-                        <i class="bi bi-shield-check text-5xl"></i>
-
-                        <h3 class="text-5xl font-bold mt-5">
-
-                            100%
-
-                        </h3>
-
-                        <p class="mt-2 text-blue-100">
-
-                            Compromisso
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- DEPOIMENTOS -->
-
-<section class="py-24 bg-slate-50">
-
-    <div class="max-w-7xl mx-auto px-6">
-
-        <div class="text-center">
-
-            <span class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
-
-                <i class="bi bi-chat-quote-fill"></i>
-
-                Depoimentos
-
-            </span>
-
-            <h2 class="text-5xl font-bold mt-6">
-
-                O que nossos pacientes dizem
-
-            </h2>
-
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8 mt-16">
-
-            <div class="bg-white rounded-3xl p-8 shadow-lg">
-
-                <div class="text-yellow-400 text-xl mb-5">
-
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-
-                </div>
-
-                <p class="text-slate-600 leading-8">
-
-                    Atendimento excelente. A equipe foi extremamente
-                    atenciosa e o tratamento superou minhas expectativas.
-
-                </p>
-
-                <div class="flex items-center gap-4 mt-8">
-
-                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center">
-
-                        <i class="bi bi-person-fill text-blue-600 text-2xl"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h4 class="font-semibold">
-
-                            Maria Oliveira
-
-                        </h4>
-
-                        <p class="text-sm text-slate-500">
-
-                            Paciente
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="bg-white rounded-3xl p-8 shadow-lg">
-
-                <div class="text-yellow-400 text-xl mb-5">
-
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-
-                </div>
-
-                <p class="text-slate-600 leading-8">
-
-                    Fiz meu implante e fiquei impressionado com a estrutura,
-                    organização e profissionalismo da clínica.
-
-                </p>
-
-                <div class="flex items-center gap-4 mt-8">
-
-                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center">
-
-                        <i class="bi bi-person-fill text-blue-600 text-2xl"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h4 class="font-semibold">
-
-                            Carlos Henrique
-
-                        </h4>
-
-                        <p class="text-sm text-slate-500">
-
-                            Paciente
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="bg-white rounded-3xl p-8 shadow-lg">
-
-                <div class="text-yellow-400 text-xl mb-5">
-
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-
-                </div>
-
-                <p class="text-slate-600 leading-8">
-
-                    Ambiente moderno, atendimento rápido e profissionais muito competentes.
-                    Recomendo sem dúvidas.
-
-                </p>
-
-                <div class="flex items-center gap-4 mt-8">
-
-                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center">
-
-                        <i class="bi bi-person-fill text-blue-600 text-2xl"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h4 class="font-semibold">
-
-                            Fernanda Costa
-
-                        </h4>
-
-                        <p class="text-sm text-slate-500">
-
-                            Paciente
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-<!-- CTA -->
-
-<section class="relative overflow-hidden py-24">
-
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500"></div>
-
-    <div class="relative max-w-6xl mx-auto px-6 text-center text-white">
-
-        <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-5 py-2 rounded-full">
-
-            <i class="bi bi-calendar-heart-fill"></i>
-
-            Agende sua consulta hoje mesmo
-
-        </div>
-
-        <h2 class="text-5xl font-bold mt-8">
-
-            Um sorriso saudável começa com uma avaliação.
-
-        </h2>
-
-        <p class="text-blue-100 text-lg mt-6 max-w-3xl mx-auto leading-8">
-
-            Nossa equipe está preparada para oferecer o melhor atendimento,
-            esclarecer suas dúvidas e indicar o tratamento ideal para você.
-
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-5 mt-12">
-
-            <button
-                class="bg-white text-blue-700 font-semibold px-8 py-4 rounded-2xl hover:scale-105 transition flex items-center gap-3">
-
-                <i class="bi bi-whatsapp"></i>
-
-                Agendar pelo WhatsApp
-
-            </button>
-
-            <button
-                onclick="toggleChat()"
-                class="border border-white px-8 py-4 rounded-2xl hover:bg-white hover:text-blue-700 transition flex items-center gap-3">
-
-                <i class="bi bi-robot"></i>
-
-                Conversar com a IA
-
-            </button>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FAQ -->
-
-<section class="py-24 bg-white">
-
-    <div class="max-w-5xl mx-auto px-6">
-
-        <div class="text-center">
-
-            <span class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full">
-
-                <i class="bi bi-question-circle-fill"></i>
-
-                Perguntas Frequentes
-
-            </span>
-
-            <h2 class="text-5xl font-bold mt-6">
-
-                Tire suas dúvidas
-
-            </h2>
-
-        </div>
-
-        <div class="space-y-5 mt-16">
-
-            <details class="bg-slate-50 rounded-2xl p-6 shadow">
-
-                <summary class="cursor-pointer font-semibold text-lg">
-
-                    A clínica trabalha com implantes dentários?
-
-                </summary>
-
-                <p class="mt-4 text-slate-600 leading-7">
-
-                    Sim. Trabalhamos com implantes utilizando materiais de alta qualidade e planejamento personalizado.
-
-                </p>
-
-            </details>
-
-            <details class="bg-slate-50 rounded-2xl p-6 shadow">
-
-                <summary class="cursor-pointer font-semibold text-lg">
-
-                    É possível parcelar os tratamentos?
-
-                </summary>
-
-                <p class="mt-4 text-slate-600 leading-7">
-
-                    Sim. Consulte nossa equipe para conhecer as formas de pagamento disponíveis.
-
-                </p>
-
-            </details>
-
-            <details class="bg-slate-50 rounded-2xl p-6 shadow">
-
-                <summary class="cursor-pointer font-semibold text-lg">
-
-                    Vocês atendem crianças?
-
-                </summary>
-
-                <p class="mt-4 text-slate-600 leading-7">
-
-                    Sim. Contamos com atendimento especializado em odontopediatria.
-
-                </p>
-
-            </details>
-
-            <details class="bg-slate-50 rounded-2xl p-6 shadow">
-
-                <summary class="cursor-pointer font-semibold text-lg">
-
-                    Posso tirar dúvidas com o assistente virtual?
-
-                </summary>
-
-                <p class="mt-4 text-slate-600 leading-7">
-
-                    Sim. Nosso assistente virtual pode explicar tratamentos, orientar sobre procedimentos e auxiliar no agendamento.
-
-                </p>
-
-            </details>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- RODAPÉ -->
-
-<footer id="contato" class="bg-slate-900 text-white">
-
-    <div class="max-w-7xl mx-auto px-6 py-20">
-
-        <div class="grid lg:grid-cols-4 gap-12">
-
-            <div>
-
-                <div class="flex items-center gap-3">
-
-                    <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center">
-
-                        <i class="bi bi-heart-pulse-fill text-2xl"></i>
-
-                    </div>
-
-                    <div>
-
-                        <h3 class="font-bold text-xl">
-
-                            OdontoCare
-
-                        </h3>
-
-                        <p class="text-slate-400 text-sm">
-
-                            Clínica Odontológica
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-                <p class="text-slate-400 mt-6 leading-7">
-
-                    Atendimento humanizado, tecnologia moderna e profissionais especializados para cuidar do seu sorriso.
+                    Trabalhamos com odontologia moderna, tecnologia de ponta
+                    e atendimento personalizado para todas as idades.
 
                 </p>
 
             </div>
 
-            <div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
 
-                <h4 class="font-semibold text-lg mb-5">
-
-                    Clínica
-
-                </h4>
-
-                <ul class="space-y-3 text-slate-400">
-
-                    <li><a href="#inicio" class="hover:text-white">Início</a></li>
-                    <li><a href="#tratamentos" class="hover:text-white">Tratamentos</a></li>
-                    <li><a href="#sobre" class="hover:text-white">Sobre</a></li>
-                    <li><a href="#contato" class="hover:text-white">Contato</a></li>
-
-                </ul>
-
-            </div>
-
-            <div>
-
-                <h4 class="font-semibold text-lg mb-5">
-
-                    Contato
-
-                </h4>
-
-                <ul class="space-y-4 text-slate-400">
-
-                    <li><i class="bi bi-telephone-fill mr-2"></i>(11) 99999-9999</li>
-
-                    <li><i class="bi bi-envelope-fill mr-2"></i>contato@odontocare.com.br</li>
-
-                    <li><i class="bi bi-geo-alt-fill mr-2"></i>Sua cidade - UF</li>
-
-                </ul>
-
-            </div>
-
-            <div>
-
-                <h4 class="font-semibold text-lg mb-5">
-
-                    Redes Sociais
-
-                </h4>
-
-                <div class="flex gap-4">
-
-                    <a href="#" class="w-12 h-12 rounded-xl bg-slate-800 hover:bg-blue-600 transition flex items-center justify-center">
-
-                        <i class="bi bi-instagram"></i>
-
-                    </a>
-
-                    <a href="#" class="w-12 h-12 rounded-xl bg-slate-800 hover:bg-blue-600 transition flex items-center justify-center">
-
-                        <i class="bi bi-facebook"></i>
-
-                    </a>
-
-                    <a href="#" class="w-12 h-12 rounded-xl bg-slate-800 hover:bg-blue-600 transition flex items-center justify-center">
-
-                        <i class="bi bi-whatsapp"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="border-t border-slate-800 mt-16 pt-8 text-center text-slate-500">
-
-            © 2026 OdontoCare • Todos os direitos reservados.
-
-        </div>
-
-    </div>
-
-</footer>
-<!-- BOTÃO FLUTUANTE -->
-
-<button
-    onclick="toggleChat()"
-    class="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 shadow-2xl text-white text-2xl flex items-center justify-center transition hover:scale-110 z-50">
-
-    <i class="bi bi-robot"></i>
-
-</button>
-
-<!-- CHAT -->
-
-<div
-    id="chat"
-    class="hidden fixed bottom-24 right-6 w-[420px] h-[700px] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col z-50 border border-slate-200">
-
-    <!-- Cabeçalho -->
-
-    <div class="bg-gradient-to-r from-blue-700 to-blue-500 text-white p-5">
-
-        <div class="flex justify-between items-center">
-
-            <div class="flex items-center gap-3">
+                <!-- Card -->
 
                 <div
-                    class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center text-2xl">
+                    class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-6 sm:p-8 transition duration-300 shadow hover:shadow-xl">
 
-                    <i class="bi bi-robot"></i>
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-white">
 
-                </div>
+                        <i class="bi bi-shield-check"></i>
 
-                <div>
+                    </div>
 
-                    <h3 class="font-bold">
+                    <h3 class="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 group-hover:text-white">
 
-                        Assistente Virtual
+                        Implantes
 
                     </h3>
 
-                    <p class="text-sm opacity-80 flex items-center gap-2">
+                    <p class="mt-3 sm:mt-4 text-slate-500 group-hover:text-blue-100 leading-7 text-sm sm:text-base">
 
-                        <span class="w-2 h-2 rounded-full bg-green-400"></span>
+                        Reabilitação oral completa com implantes de alta qualidade para devolver conforto e segurança ao
+                        sorrir.
 
-                        Online
+                    </p>
+
+                </div>
+
+                <!-- Card -->
+
+                <div
+                    class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-6 sm:p-8 transition duration-300 shadow hover:shadow-xl">
+
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-yellow-100 text-yellow-500 flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-white">
+
+                        <i class="bi bi-stars"></i>
+
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 group-hover:text-white">
+
+                        Clareamento
+
+                    </h3>
+
+                    <p class="mt-3 sm:mt-4 text-slate-500 group-hover:text-blue-100 leading-7 text-sm sm:text-base">
+
+                        Técnicas modernas para conquistar um sorriso mais branco com segurança.
+
+                    </p>
+
+                </div>
+
+                <!-- Card -->
+
+                <div
+                    class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-6 sm:p-8 transition duration-300 shadow hover:shadow-xl">
+
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-white">
+
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 group-hover:text-white">
+
+                        Ortodontia
+
+                    </h3>
+
+                    <p class="mt-3 sm:mt-4 text-slate-500 group-hover:text-blue-100 leading-7 text-sm sm:text-base">
+
+                        Correção do alinhamento dos dentes com aparelhos tradicionais e alinhadores invisíveis.
+
+                    </p>
+
+                </div>
+
+                <!-- Card -->
+
+                <div
+                    class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-6 sm:p-8 transition duration-300 shadow hover:shadow-xl">
+
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-white">
+
+                        <i class="bi bi-gem"></i>
+
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 group-hover:text-white">
+
+                        Lentes Dentais
+
+                    </h3>
+
+                    <p class="mt-3 sm:mt-4 text-slate-500 group-hover:text-blue-100 leading-7 text-sm sm:text-base">
+
+                        Transforme seu sorriso com laminados cerâmicos de alta estética.
+
+                    </p>
+
+                </div>
+
+                <!-- Card -->
+
+                <div
+                    class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-6 sm:p-8 transition duration-300 shadow hover:shadow-xl">
+
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-white">
+
+                        <i class="bi bi-heart-pulse"></i>
+
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 group-hover:text-white">
+
+                        Prevenção
+
+                    </h3>
+
+                    <p class="mt-3 sm:mt-4 text-slate-500 group-hover:text-blue-100 leading-7 text-sm sm:text-base">
+
+                        Limpeza, profilaxia e acompanhamento periódico para manter sua saúde bucal.
+
+                    </p>
+
+                </div>
+
+                <!-- Card -->
+
+                <div
+                    class="group bg-slate-50 hover:bg-blue-600 rounded-3xl p-6 sm:p-8 transition duration-300 shadow hover:shadow-xl">
+
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl sm:text-3xl group-hover:bg-white">
+
+                        <i class="bi bi-emoji-smile"></i>
+
+                    </div>
+
+                    <h3 class="text-xl sm:text-2xl font-bold mt-5 sm:mt-6 group-hover:text-white">
+
+                        Odontologia Estética
+
+                    </h3>
+
+                    <p class="mt-3 sm:mt-4 text-slate-500 group-hover:text-blue-100 leading-7 text-sm sm:text-base">
+
+                        Procedimentos para deixar seu sorriso ainda mais bonito e harmonioso.
 
                     </p>
 
@@ -1221,62 +469,182 @@
 
             </div>
 
-            <button
-                onclick="toggleChat()"
-                class="text-2xl">
-
-                <i class="bi bi-x-lg"></i>
-
-            </button>
-
         </div>
 
-    </div>
+    </section>
 
-    <!-- Mensagens -->
+    <!-- SOBRE -->
+<section id="sobre"
+    class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500 text-white">
 
-    <div
-        id="messages"
-        class="flex-1 overflow-y-auto bg-slate-100 p-6 space-y-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-        <div class="flex">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            <div
-                class="bg-white shadow rounded-2xl p-4 max-w-[85%]">
+            <!-- Texto -->
+            <div class="text-center lg:text-left">
 
-                <div class="flex items-center gap-2 mb-2">
+                <span
+                    class="inline-flex items-center justify-center lg:justify-start gap-2 bg-white/20 backdrop-blur px-4 py-2 rounded-full text-sm sm:text-base">
 
-                    <i class="bi bi-robot text-blue-600"></i>
+                    <i class="bi bi-patch-check-fill"></i>
 
-                    <strong>
+                    Excelência em Odontologia
 
-                        Assistente IA
+                </span>
 
-                    </strong>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-6 sm:mt-8 leading-tight">
+
+                    Cuidamos do seu sorriso
+                    com tecnologia,
+                    experiência e dedicação.
+
+                </h2>
+
+                <p class="mt-6 sm:mt-8 text-blue-100 text-base sm:text-lg leading-7 sm:leading-8">
+
+                    Nossa missão é proporcionar um atendimento acolhedor,
+                    utilizando equipamentos modernos e técnicas atualizadas
+                    para garantir conforto, segurança e excelentes resultados.
+
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10 sm:mt-12 justify-items-center sm:justify-items-start">
+
+                    <div class="flex gap-4 items-start text-center sm:text-left">
+
+                        <div class="text-2xl shrink-0">
+                            <i class="bi bi-check-circle-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-base sm:text-lg">
+                                Atendimento Humanizado
+                            </h4>
+                            <p class="text-blue-100 text-sm">
+                                Respeito e atenção em cada consulta.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-4 items-start text-center sm:text-left">
+
+                        <div class="text-2xl shrink-0">
+                            <i class="bi bi-cpu-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-base sm:text-lg">
+                                Equipamentos Modernos
+                            </h4>
+                            <p class="text-blue-100 text-sm">
+                                Tecnologia para diagnósticos precisos.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-4 items-start text-center sm:text-left">
+
+                        <div class="text-2xl shrink-0">
+                            <i class="bi bi-person-check-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-base sm:text-lg">
+                                Especialistas
+                            </h4>
+                            <p class="text-blue-100 text-sm">
+                                Profissionais altamente capacitados.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="flex gap-4 items-start text-center sm:text-left">
+
+                        <div class="text-2xl shrink-0">
+                            <i class="bi bi-heart-fill"></i>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-base sm:text-lg">
+                                Atendimento Personalizado
+                            </h4>
+                            <p class="text-blue-100 text-sm">
+                                Cada paciente é único.
+                            </p>
+                        </div>
+
+                    </div>
 
                 </div>
 
-                Olá! 👋
+            </div>
 
-                <br><br>
+            <!-- Estatísticas -->
+            <div>
 
-                Sou o assistente virtual da clínica.
+                <div class="grid grid-cols-2 gap-4 sm:gap-6">
 
-                Posso ajudar com:
+                    <div class="bg-white/10 backdrop-blur rounded-3xl p-6 sm:p-8 text-center">
 
-                <ul class="mt-3 space-y-2 text-sm">
+                        <i class="bi bi-people-fill text-4xl sm:text-5xl"></i>
 
-                    <li>🦷 Implantes</li>
+                        <h3 class="text-3xl sm:text-5xl font-bold mt-4 sm:mt-5">
+                            5.000+
+                        </h3>
 
-                    <li>😁 Clareamento</li>
+                        <p class="mt-2 text-blue-100 text-sm sm:text-base">
+                            Pacientes Atendidos
+                        </p>
 
-                    <li>📅 Agendamentos</li>
+                    </div>
 
-                    <li>💳 Formas de pagamento</li>
+                    <div class="bg-white/10 backdrop-blur rounded-3xl p-6 sm:p-8 text-center">
 
-                    <li>👨‍⚕️ Tratamentos</li>
+                        <i class="bi bi-award-fill text-4xl sm:text-5xl"></i>
 
-                </ul>
+                        <h3 class="text-3xl sm:text-5xl font-bold mt-4 sm:mt-5">
+                            10+
+                        </h3>
+
+                        <p class="mt-2 text-blue-100 text-sm sm:text-base">
+                            Anos de Experiência
+                        </p>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur rounded-3xl p-6 sm:p-8 text-center">
+
+                        <i class="bi bi-star-fill text-4xl sm:text-5xl"></i>
+
+                        <h3 class="text-3xl sm:text-5xl font-bold mt-4 sm:mt-5">
+                            4.9
+                        </h3>
+
+                        <p class="mt-2 text-blue-100 text-sm sm:text-base">
+                            Avaliação Média
+                        </p>
+
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur rounded-3xl p-6 sm:p-8 text-center">
+
+                        <i class="bi bi-shield-check text-4xl sm:text-5xl"></i>
+
+                        <h3 class="text-3xl sm:text-5xl font-bold mt-4 sm:mt-5">
+                            100%
+                        </h3>
+
+                        <p class="mt-2 text-blue-100 text-sm sm:text-base">
+                            Compromisso
+                        </p>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -1284,72 +652,706 @@
 
     </div>
 
-    <!-- Sugestões -->
+</section>
 
-    <div
-        class="px-4 py-3 border-t bg-white">
+    <!-- DEPOIMENTOS -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-slate-50">
 
-        <div
-            class="flex gap-2 overflow-x-auto whitespace-nowrap pb-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
-            <button class="quick bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+            <div class="text-center">
 
-                Implantes
+                <span
+                    class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm sm:text-base">
 
-            </button>
+                    <i class="bi bi-chat-quote-fill"></i>
 
-            <button class="quick bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+                    Depoimentos
 
-                Clareamento
+                </span>
 
-            </button>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-5 sm:mt-6">
 
-            <button class="quick bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+                    O que nossos pacientes dizem
 
-                Convênios
+                </h2>
 
-            </button>
+            </div>
 
-            <button class="quick bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
 
-                Valores
+                <!-- Depoimento -->
 
-            </button>
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition">
 
-            <button class="quick bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+                    <div class="text-yellow-400 text-lg sm:text-xl mb-4 sm:mb-5">
 
-                Agendar Consulta
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
 
-            </button>
+                    </div>
+
+                    <p class="text-slate-600 leading-7 sm:leading-8 text-sm sm:text-base">
+
+                        Atendimento excelente. A equipe foi extremamente
+                        atenciosa e o tratamento superou minhas expectativas.
+
+                    </p>
+
+                    <div class="flex items-center gap-4 mt-6 sm:mt-8">
+
+                        <div
+                            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-100 flex items-center justify-center">
+
+                            <i class="bi bi-person-fill text-blue-600 text-xl sm:text-2xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-semibold text-base sm:text-lg">
+
+                                Maria Oliveira
+
+                            </h4>
+
+                            <p class="text-sm text-slate-500">
+
+                                Paciente
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Depoimento -->
+
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition">
+
+                    <div class="text-yellow-400 text-lg sm:text-xl mb-4 sm:mb-5">
+
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+
+                    </div>
+
+                    <p class="text-slate-600 leading-7 sm:leading-8 text-sm sm:text-base">
+
+                        Fiz meu implante e fiquei impressionado com a estrutura,
+                        organização e profissionalismo da clínica.
+
+                    </p>
+
+                    <div class="flex items-center gap-4 mt-6 sm:mt-8">
+
+                        <div
+                            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-100 flex items-center justify-center">
+
+                            <i class="bi bi-person-fill text-blue-600 text-xl sm:text-2xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-semibold text-base sm:text-lg">
+
+                                Carlos Henrique
+
+                            </h4>
+
+                            <p class="text-sm text-slate-500">
+
+                                Paciente
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Depoimento -->
+
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition">
+
+                    <div class="text-yellow-400 text-lg sm:text-xl mb-4 sm:mb-5">
+
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+
+                    </div>
+
+                    <p class="text-slate-600 leading-7 sm:leading-8 text-sm sm:text-base">
+
+                        Ambiente moderno, atendimento rápido e profissionais muito competentes.
+                        Recomendo sem dúvidas.
+
+                    </p>
+
+                    <div class="flex items-center gap-4 mt-6 sm:mt-8">
+
+                        <div
+                            class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-blue-100 flex items-center justify-center">
+
+                            <i class="bi bi-person-fill text-blue-600 text-xl sm:text-2xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-semibold text-base sm:text-lg">
+
+                                Fernanda Costa
+
+                            </h4>
+
+                            <p class="text-sm text-slate-500">
+
+                                Paciente
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="flex gap-3">
+    </section>
 
-            <input
+    <!-- CTA -->
+    <section class="relative overflow-hidden py-16 sm:py-20 lg:py-24">
 
-                id="message"
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500"></div>
 
-                type="text"
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 text-center text-white">
 
-                placeholder="Digite sua mensagem..."
+            <div
+                class="inline-flex items-center gap-2 bg-white/20 backdrop-blur px-4 sm:px-5 py-2 rounded-full text-sm sm:text-base">
 
-                class="flex-1 border rounded-xl px-5 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <i class="bi bi-calendar-heart-fill"></i>
 
-            <button
+                Agende sua consulta hoje mesmo
 
-                id="send"
+            </div>
 
-                class="bg-blue-600 hover:bg-blue-700 text-white w-14 rounded-xl">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-6 sm:mt-8 leading-tight">
 
-                <i class="bi bi-send-fill"></i>
+                Um sorriso saudável começa com uma avaliação.
 
-            </button>
+            </h2>
+
+            <p class="text-blue-100 text-base sm:text-lg mt-5 sm:mt-6 max-w-3xl mx-auto leading-7 sm:leading-8">
+
+                Nossa equipe está preparada para oferecer o melhor atendimento,
+                esclarecer suas dúvidas e indicar o tratamento ideal para você.
+
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-5 mt-10 sm:mt-12">
+
+                <button
+                    class="w-full sm:w-auto justify-center bg-white text-blue-700 font-semibold px-8 py-4 rounded-2xl hover:scale-105 transition flex items-center gap-3">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    Agendar pelo WhatsApp
+
+                </button>
+
+                <button onclick="toggleChat()"
+                    class="w-full sm:w-auto justify-center border border-white px-8 py-4 rounded-2xl hover:bg-white hover:text-blue-700 transition flex items-center gap-3">
+
+                    <i class="bi bi-robot"></i>
+
+                    Conversar com a IA
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+
+            <div class="text-center">
+
+                <span
+                    class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm sm:text-base">
+
+                    <i class="bi bi-question-circle-fill"></i>
+
+                    Perguntas Frequentes
+
+                </span>
+
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mt-5 sm:mt-6">
+
+                    Tire suas dúvidas
+
+                </h2>
+
+            </div>
+
+            <div class="space-y-4 sm:space-y-5 mt-12 sm:mt-16">
+
+                <details class="bg-slate-50 rounded-2xl p-5 sm:p-6 shadow hover:shadow-lg transition">
+
+                    <summary class="cursor-pointer font-semibold text-base sm:text-lg">
+
+                        A clínica trabalha com implantes dentários?
+
+                    </summary>
+
+                    <p class="mt-4 text-slate-600 leading-7 text-sm sm:text-base">
+
+                        Sim. Trabalhamos com implantes utilizando materiais de alta qualidade e planejamento
+                        personalizado.
+
+                    </p>
+
+                </details>
+
+                <details class="bg-slate-50 rounded-2xl p-5 sm:p-6 shadow hover:shadow-lg transition">
+
+                    <summary class="cursor-pointer font-semibold text-base sm:text-lg">
+
+                        É possível parcelar os tratamentos?
+
+                    </summary>
+
+                    <p class="mt-4 text-slate-600 leading-7 text-sm sm:text-base">
+
+                        Sim. Consulte nossa equipe para conhecer as formas de pagamento disponíveis.
+
+                    </p>
+
+                </details>
+
+                <details class="bg-slate-50 rounded-2xl p-5 sm:p-6 shadow hover:shadow-lg transition">
+
+                    <summary class="cursor-pointer font-semibold text-base sm:text-lg">
+
+                        Vocês atendem crianças?
+
+                    </summary>
+
+                    <p class="mt-4 text-slate-600 leading-7 text-sm sm:text-base">
+
+                        Sim. Contamos com atendimento especializado em odontopediatria.
+
+                    </p>
+
+                </details>
+
+                <details class="bg-slate-50 rounded-2xl p-5 sm:p-6 shadow hover:shadow-lg transition">
+
+                    <summary class="cursor-pointer font-semibold text-base sm:text-lg">
+
+                        Posso tirar dúvidas com o assistente virtual?
+
+                    </summary>
+
+                    <p class="mt-4 text-slate-600 leading-7 text-sm sm:text-base">
+
+                        Sim. O assistente virtual pode explicar tratamentos, orientar sobre procedimentos e esclarecer
+                        dúvidas gerais durante esta demonstração.
+
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="bg-slate-900 text-white">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
+
+                <!-- Logo -->
+
+                <div>
+
+                    <div class="flex items-center gap-3">
+
+                        <div class="w-12 h-12 bg-blue-600 rounded-2xl flex items-center justify-center shrink-0">
+
+                            <i class="bi bi-heart-pulse-fill text-2xl"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3 class="font-bold text-xl">
+
+                                OdontoCare
+
+                            </h3>
+
+                            <p class="text-slate-400 text-sm">
+
+                                Clínica Odontológica
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <p class="text-slate-400 mt-6 leading-7 text-sm sm:text-base">
+
+                        Atendimento humanizado, tecnologia moderna e profissionais especializados para cuidar do seu
+                        sorriso.
+
+                    </p>
+
+                </div>
+
+                <!-- Navegação -->
+
+                <div>
+
+                    <h4 class="font-semibold text-lg mb-5">
+
+                        Clínica
+
+                    </h4>
+
+                    <ul class="space-y-3 text-slate-400">
+
+                        <li>
+
+                            <a href="#inicio" class="hover:text-white transition">
+
+                                Início
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#tratamentos" class="hover:text-white transition">
+
+                                Tratamentos
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#sobre" class="hover:text-white transition">
+
+                                Sobre
+
+                            </a>
+
+                        </li>
+
+                        <li>
+
+                            <a href="#contato" class="hover:text-white transition">
+
+                                Contato
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Contato -->
+
+                <div>
+
+                    <h4 class="font-semibold text-lg mb-5">
+
+                        Contato
+
+                    </h4>
+
+                    <ul class="space-y-4 text-slate-400 text-sm sm:text-base">
+
+                        <li class="flex items-start gap-3">
+
+                            <i class="bi bi-telephone-fill mt-1"></i>
+
+                            <span>(11) 99999-9999</span>
+
+                        </li>
+
+                        <li class="flex items-start gap-3 break-all">
+
+                            <i class="bi bi-envelope-fill mt-1"></i>
+
+                            <span>contato@odontocare.com.br</span>
+
+                        </li>
+
+                        <li class="flex items-start gap-3">
+
+                            <i class="bi bi-geo-alt-fill mt-1"></i>
+
+                            <span>Sua cidade - UF</span>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <!-- Redes -->
+
+                <div>
+
+                    <h4 class="font-semibold text-lg mb-5">
+
+                        Redes Sociais
+
+                    </h4>
+
+                    <div class="flex gap-4">
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-slate-800 hover:bg-blue-600 transition flex items-center justify-center">
+
+                            <i class="bi bi-instagram"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-slate-800 hover:bg-blue-600 transition flex items-center justify-center">
+
+                            <i class="bi bi-facebook"></i>
+
+                        </a>
+
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-slate-800 hover:bg-blue-600 transition flex items-center justify-center">
+
+                            <i class="bi bi-whatsapp"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-800 mt-12 sm:mt-16 pt-8 text-center text-slate-500 text-sm leading-6">
+
+                <p>
+
+                    © 2026 <strong>OdontoCare</strong> • Todos os direitos reservados.
+
+                </p>
+
+                <p class="mt-3">
+
+                    Demonstração desenvolvida pela <strong>AlturionX</strong>.
+                    A clínica, informações e contatos exibidos nesta página são fictícios e utilizados apenas para
+                    apresentação da solução.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <button onclick="toggleChat()"
+        class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-blue-600 hover:bg-blue-700 shadow-2xl text-white text-xl sm:text-2xl flex items-center justify-center transition hover:scale-110 z-50">
+
+        <i class="bi bi-robot"></i>
+
+    </button>
+
+    <!-- CHAT -->
+    <div id="chat"
+        class="hidden fixed inset-x-3 bottom-20 top-3 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[420px] sm:h-[700px] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col z-50 border border-slate-200">
+
+        <!-- Cabeçalho -->
+
+        <div class="bg-gradient-to-r from-blue-700 to-blue-500 text-white p-4 sm:p-5">
+
+            <div class="flex justify-between items-center">
+
+                <div class="flex items-center gap-3">
+
+                    <div
+                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-white/20 flex items-center justify-center text-xl sm:text-2xl">
+
+                        <i class="bi bi-robot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3 class="font-bold text-base sm:text-lg">
+
+                            Assistente Virtual
+
+                        </h3>
+
+                        <p class="text-xs sm:text-sm opacity-80 flex items-center gap-2">
+
+                            <span class="w-2 h-2 rounded-full bg-green-400"></span>
+
+                            Online
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button onclick="toggleChat()" class="text-xl sm:text-2xl hover:opacity-80 transition">
+
+                    <i class="bi bi-x-lg"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Mensagens -->
+
+        <div id="messages" class="flex-1 overflow-y-auto bg-slate-100 p-4 sm:p-6 space-y-4">
+
+            <div class="flex">
+
+                <div class="bg-white shadow rounded-2xl p-4 max-w-[92%] sm:max-w-[85%]">
+
+                    <div class="flex items-center gap-2 mb-2">
+
+                        <i class="bi bi-robot text-blue-600"></i>
+
+                        <strong>
+
+                            Assistente IA
+
+                        </strong>
+
+                    </div>
+
+                    Olá! 👋
+
+                    <br><br>
+
+                    Sou o assistente virtual da clínica.
+
+                    Posso ajudar com:
+
+                    <ul class="mt-3 space-y-2 text-sm">
+
+                        <li>🦷 Implantes</li>
+
+                        <li>😁 Clareamento</li>
+
+                        <li>📅 Agendamentos</li>
+
+                        <li>💳 Formas de pagamento</li>
+
+                        <li>👨‍⚕️ Tratamentos</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Sugestões -->
+
+        <div class="px-3 sm:px-4 py-3 border-t bg-white">
+
+            <div class="flex gap-2 overflow-x-auto whitespace-nowrap pb-3 no-scrollbar">
+
+                <button class="quick shrink-0 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+
+                    Implantes
+
+                </button>
+
+                <button class="quick shrink-0 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+
+                    Clareamento
+
+                </button>
+
+                <button class="quick shrink-0 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+
+                    Convênios
+
+                </button>
+
+                <button class="quick shrink-0 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+
+                    Valores
+
+                </button>
+
+                <button class="quick shrink-0 bg-slate-100 hover:bg-slate-200 px-4 py-2 rounded-full text-sm">
+
+                    Agendar Consulta
+
+                </button>
+
+            </div>
+
+            <div class="flex gap-2 sm:gap-3">
+
+                <input id="message" type="text" placeholder="Digite sua mensagem..."
+                    class="flex-1 border rounded-xl px-4 sm:px-5 py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+                <button id="send"
+                    class="bg-blue-600 hover:bg-blue-700 text-white w-12 sm:w-14 rounded-xl flex items-center justify-center transition">
+
+                    <i class="bi bi-send-fill"></i>
+
+                </button>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
