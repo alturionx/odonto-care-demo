@@ -13,8 +13,14 @@ app.use(express.json());
 // servir o site
 app.use(express.static("./"));
 
+const apiKey = process.env.GROQ_API_KEY;
+
+if (!apiKey) {
+    console.error("❌ GROQ_API_KEY não encontrada no ambiente");
+}
+
 const groq = new Groq({
-    apiKey: process.env.GROQ_API_KEY
+    apiKey: apiKey || "fallback_invalid_key"
 });
 
 const systemPrompt = `
