@@ -13,6 +13,8 @@ app.use(express.json());
 // servir o site
 app.use(express.static("./"));
 
+console.log("ENV TEST:", process.env.GROQ_API_KEY);
+
 const apiKey = process.env.GROQ_API_KEY;
 
 if (!apiKey) {
